@@ -1,0 +1,47 @@
+# chatgpt generated this btw
+
+name: fontforge-convert-and-upload-artifacts (h!!!)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo (h!!)
+        uses: actions/checkout@v3
+
+      - name: Install fontforge and gzip (h!!)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fontforge gzip
+
+      - name: Convert font and gzip BDF (h!!)
+        run: |
+          fontforge -script convert.pe
+          mv creep-16.fnt creep.fnt
+          mv creep-16.bdf creep.bdf
+          gzip -c creep.bdf > creep.bdf.gz
+
+      - name: Upload creep.dfont artifact (h!!)
+        uses: actions/upload-artifact@v3
+        with:
+          name: creep.dfont
+          path: creep.dfont
+
+      - name: Upload creep.bdf.gz artifact (h!!)
+        uses: actions/upload-artifact@v3
+        with:
+          name: creep.bdf.gz
+          path: creep.bdf.gz
+
+# with this i am able to downloadeth theth fonteth
+
+      - name: Upload creep.fnt artifact (h!!)
+        uses: actions/upload-artifact@v3
+        with:
+          name: creep.fnt
+          path: creep.fnt
