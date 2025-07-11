@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo (h!!)
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install fontforge and gzip (h!!)
         run: |
@@ -28,13 +28,19 @@ jobs:
           gzip -c creep.bdf > creep.bdf.gz
 
       - name: Upload creep.dfont artifact (h!!)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: creep.dfont
           path: creep.dfont
 
+      - name: creep.fnt
+        uses: actions/upload-artifact@v4
+        with:
+          name: creep.fnt
+          path: creep.fnt
+
       - name: Upload creep.bdf.gz artifact (h!!)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: creep.bdf.gz
           path: creep.bdf.gz
