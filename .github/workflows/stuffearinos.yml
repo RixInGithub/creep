@@ -3,6 +3,7 @@
 name: fontforge-convert-and-upload-artifacts (h!!!)
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
