@@ -33,22 +33,16 @@ jobs:
           name: creep.dfont
           path: creep.dfont
 
-      - name: creep.fnt
-        uses: actions/upload-artifact@v4
-        with:
-          name: creep.fnt
-          path: creep.fnt
-
       - name: Upload creep.bdf.gz artifact (h!!)
         uses: actions/upload-artifact@v4
         with:
           name: creep.bdf.gz
           path: creep.bdf.gz
 
-# with this i am able to downloadeth theth fonteth
-
       - name: Upload creep.fnt artifact (h!!)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: creep.fnt
           path: creep.fnt
+
+# with this i am able to downloadeth theth fonteth
